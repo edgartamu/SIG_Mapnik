@@ -22,3 +22,16 @@ Descomprimir los archivos dentro del repositorio en una carpeta que llamaremos "
    ln -s ne_110m_admin_0_boundary_lines_land.shp 110m_admin_0_boundary_lines_land.shp
    ln -s ne_110m_admin_0_boundary_lines_land.dbf 110m_admin_0_boundary_lines_land.dbf
 </pre>
+
+
+## Generate_xml.py
+Generamos nuestro archivo xml personalizado conectándonos a nuestra BD.
+<pre>
+   python generate_xml.py osm.xml <nombre>.xml --symbols symbols/ --world_boundaries world_boundaries/ --host <host> --user <user> --dbname <gisdb> --port <port> --password <pass>
+</pre>
+
+## Generate_img.py
+Generamos la imagen:
+<pre>
+   python generate_img.py <nombre.xml>
+</pre>
