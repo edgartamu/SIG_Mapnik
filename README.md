@@ -1,6 +1,13 @@
 # SIG_Mapnik
 Proyecto para poder renderizar mapas desde una base de datos de postgis
 
+## Carga de datos con osm2pgsql
+El archivo de stylo se encuentra por defecto en /usr/share/osm2pgsql/default.style
+
+<pre>
+   osm2pgsql -c -d [gisdb] -U [user] -H [localhost] [opcional --cache 2500] -S default.style [archivo.osm]
+</pre>
+
 
 ## World Boundaries
 Descargar los datos para la configuración de World Boundaries:
@@ -27,11 +34,11 @@ Descomprimir los archivos dentro del repositorio en una carpeta que llamaremos "
 ## Generate_xml.py
 Generamos nuestro archivo xml personalizado conectándonos a nuestra BD.
 <pre>
-   python generate_xml.py osm.xml <nombre>.xml --symbols symbols/ --world_boundaries world_boundaries/ --host <host> --user <user> --dbname <gisdb> --port <port> --password <pass>
+   python generate_xml.py osm.xml [nombre].xml --symbols symbols/ --world_boundaries world_boundaries/ --host [host] --user [user] --dbname [gisdb] --port [port-5432] --password [pass]
 </pre>
 
 ## Generate_img.py
 Generamos la imagen:
 <pre>
-   python generate_img.py <nombre.xml>
+   python generate_img.py [nombre.xml]
 </pre>
